@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: track-hello-world-panel
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: Track
+      icon: https://i.pinimg.com/736x/d5/b0/4c/d5b04cc3dcd8c17702549ebc5f1acf1a.jpg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+permissions:
+  scopes:
+    - read:jira-work
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/27534b40-31d9-44b7-9b9f-0e0f0d6c5b27
